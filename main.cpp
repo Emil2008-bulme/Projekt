@@ -16,8 +16,10 @@ const int LED_YLW = 12;
 const int LED_BLU = 11;
 const int MOTOR_RUNNING_TIME = 3000;
 const int WAIT_FOR_COIN_INSERTION_TIME = 4000;
-const int motor1 = 10;
-const int motor2 = 9;
+const int MotorA1 = 10;
+const int MotorA2 = 9;
+const int MotorB1 = 8;
+const int MotorB2 = 7;
 
 unsigned long time1;
 
@@ -50,8 +52,10 @@ void setup() {
   pinMode(LED_GRN, OUTPUT);
   pinMode(LED_YLW, OUTPUT);
   pinMode(LED_BLU, OUTPUT);
-  pinMode(motor1, OUTPUT);
-  pinMode(motor2, OUTPUT);
+  pinMode(MotorA1, OUTPUT);
+  pinMode(MotorA2, OUTPUT);
+  pinMode(MotorB1, OUTPUT);
+  pinMode(MotorB2, OUTPUT);
 
   digitalWrite(LED_GRN, HIGH);
   current_state = STATES::STATE_IDLE;
@@ -132,16 +136,18 @@ void HandleStateSMotorActive()
     digitalWrite(LED_GRN, HIGH);
     digitalWrite(LED_BLU, LOW);
     current_state = STATES::STATE_IDLE;
+    analogWrite(MotorA1, LOW);
+    analogWrite(MotorB1, LOW);
   }
   if (selected_product == 1)
   {
-    digitalWrite(motor1, HIGH);
-    digitalWrite(motor2, LOW);
+    analogWrite(MotorA1, HIGH);
+    analogWrite(MotorA2, LOW);
   }
   if (selected_product == 2)
   {
-    digitalWrite(motor1, LOW);
-    digitalWrite(motor2, HIGH);
+    analogWrite(MotorB1, HIGH);
+    analogWrite(MotorB2, LOW);
   }
 
 }
