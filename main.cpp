@@ -136,18 +136,18 @@ void HandleStateSMotorActive()
     digitalWrite(LED_GRN, HIGH);
     digitalWrite(LED_BLU, LOW);
     current_state = STATES::STATE_IDLE;
-    analogWrite(MotorA1, LOW);
-    analogWrite(MotorB1, LOW);
+    digitalWrite(MotorA1, LOW);
+    digitalWrite(MotorB1, LOW);
   }
   if (selected_product == 1)
   {
-    analogWrite(MotorA1, HIGH);
-    analogWrite(MotorA2, LOW);
+    digitalWrite(MotorA1, HIGH);
+    digitalWrite(MotorA2, LOW);
   }
   if (selected_product == 2)
   {
-    analogWrite(MotorB1, HIGH);
-    analogWrite(MotorB2, LOW);
+    digitalWrite(MotorB1, HIGH);
+    digitalWrite(MotorB2, LOW);
   }
 
 }
