@@ -138,11 +138,8 @@ void HandleStateSMotorActive()
     current_state = STATES::STATE_IDLE;
     digitalWrite(MotorA1, LOW);
     digitalWrite(MotorB1, LOW);
-<<<<<<< HEAD
-=======
     digitalWrite(MotorA2, LOW);
     digitalWrite(MotorB2, LOW);
->>>>>>> 8068238ef4ebd29af5252f4c41f910a28864147b
   }
   if (selected_product == 1)
   {
