@@ -54,6 +54,11 @@ void setup() {
   current_state = STATES::STATE_IDLE;
 
   time1 = millis();
+
+  lcd.init();
+  lcd.backlight();
+  Serial.begin(9600);
+  lcd.clear();
  }
 
 
@@ -83,6 +88,7 @@ void loop() {
 
 void HandleStateIdle()
 {
+  lcd.print("Produkt auswaehlen");
   bool btn_prod_1_pressed = button_prod_1.pressed();
   if(btn_prod_1_pressed)
   {
