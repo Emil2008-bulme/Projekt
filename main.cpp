@@ -108,6 +108,10 @@ void HandleStateIdle()
     selected_product = 2;
     time1 = millis();
   }
+  digitalWrite(MotorA1, LOW);
+  digitalWrite(MotorB1, LOW);
+  digitalWrite(MotorA2, LOW);
+  digitalWrite(MotorB2, LOW);
 }
 void HandleStateSelected()
 {
@@ -136,10 +140,7 @@ void HandleStateSMotorActive()
     digitalWrite(LED_GRN, HIGH);
     digitalWrite(LED_BLU, LOW);
     current_state = STATES::STATE_IDLE;
-    digitalWrite(MotorA1, LOW);
-    digitalWrite(MotorB1, LOW);
-    digitalWrite(MotorA2, LOW);
-    digitalWrite(MotorB2, LOW);
+    
   }
   if (selected_product == 1)
   {
